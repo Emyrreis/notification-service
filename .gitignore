@@ -1,0 +1,34 @@
+#Ambiente Virtual
+.venv/
+venv/
+env/
+ENV/
+ 
+#Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyc
+ 
+#Pytest
+.pytest_cache/
+coverage.xml
+.coverage
+htmlcov/
+ 
+#IDEs
+.vscode/
+.idea/
+ 
+#Variáveis de Ambiente
+.env
+.env.*
+ 
+#Sistema Operacional
+.DS_Store
+Thumbs.db
+ 
+#Distribuição
+dist/
+build/
+*.egg-info/
