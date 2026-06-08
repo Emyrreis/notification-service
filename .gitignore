@@ -32,3 +32,6 @@ Thumbs.db
 dist/
 build/
 *.egg-info/
+
+#Banco de Dados
+notifications.db
