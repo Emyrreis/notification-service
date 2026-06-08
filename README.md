@@ -136,6 +136,32 @@ A cada `git push` para `main` ou `develop`, o GitHub Actions executa automaticam
 3. Instala as dependências do `requirements.txt` com versões fixadas
 4. Roda `pytest` com verificação de cobertura
 5. Publica o `coverage.xml` como artefato da execução
+
+---
+
+## Cenários de teste documentados
+
+**Testes unitários (8)** — validação do schema Pydantic isolada, sem servidor ou banco:
+- Criação válida por e-mail e SMS
+- Rejeição de e-mail inválido, canal inválido, subject vazio, message vazia e campos ausentes
+
+**Testes de endpoint (8)** — rotas HTTP via TestClient, sem servidor real:
+- `GET /health` → `200`
+- `POST /notifications` válido → `201` com todos os campos
+- `POST /notifications` com e-mail ou canal inválido → `422`
+- `GET /notifications` → lista
+- `GET /notifications/{id}` existente → `200`, inexistente → `404`
+
+**Testes de integração (8)** — endpoints + banco SQLite em memória, banco limpo a cada teste:
+- Criação persiste e é recuperada pelo GET
+- Múltiplas criações acumulam corretamente
+- Dados lidos são idênticos aos escritos
+- Status padrão `pending` aplicado pelo banco
+- Banco isolado entre testes — sem vazamento de dados
+- ID inexistente → `404`
+- E-mail inválido → `422`, banco continua vazio
+- Canal inválido → `422`, banco continua vazio
+
 ---
 
 ## Alunos
