@@ -1,11 +1,13 @@
-#API
+# API
 fastapi == 0.115.6
 uvicorn[standard] == 0.34.0
 pydantic == 2.10.4
 email-validator == 2.2.0
 sqlalchemy == 2.0.36
- 
-#Testes
+
+# Testes e qualidade
 pytest == 8.3.4
 pytest-cov == 6.0.0
-httpx == 0.28.1 
+httpx == 0.28.1
+ruff == 0.15.17
+mutmut == 3.6.0

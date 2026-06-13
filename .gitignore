@@ -15,6 +15,7 @@ __pycache__/
 coverage.xml
 .coverage
 htmlcov/
+.ruff_cache/
  
 #IDEs
 .vscode/
@@ -35,3 +36,6 @@ build/
 
 #Banco de Dados
 notifications.db
+
+#Mutacao
+mutants/
