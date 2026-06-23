@@ -8,10 +8,10 @@ from sqlalchemy.pool import StaticPool
 
 os.environ.setdefault("DATABASE_URL", "sqlite:///:memory:")
 
-from app.database import Base, get_db  # noqa: E402
-from app.main import app  # noqa: E402
-from app.metrics import reset_metrics  # noqa: E402
-from app.services.notification_sender import get_notification_sender  # noqa: E402
+from app.database import Base, get_db  
+from app.main import app 
+from app.metrics import reset_metrics  
+from app.services.notification_sender import get_notification_sender  
 
 TEST_DATABASE_URL = "sqlite:///:memory:"
 
